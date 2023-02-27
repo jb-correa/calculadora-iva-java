@@ -13,11 +13,12 @@ public class DeduccionController {
     @Autowired
     public CalculadoraService calculadoraService;
 
+
     @PostMapping("/")
     public String deduccion(Integer iva, Integer precio){
 
         double resultado=calculadoraService.deducirIVA(iva, precio);
 
-        return "";
+        return "deducir.html";
     }
 }
