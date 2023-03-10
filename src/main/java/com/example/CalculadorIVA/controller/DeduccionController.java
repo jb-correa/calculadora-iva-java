@@ -1,6 +1,6 @@
 package com.example.CalculadorIVA.controller;
 
-import com.example.CalculadorIVA.service.CalculadoraService;
+import com.example.CalculadorIVA.servicios.DeduccionServicio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class DeduccionController {
 
     @Autowired
-    public CalculadoraService calculadoraService;
+    public DeduccionServicio deduccionServicio;
 
     @GetMapping("/")
     public String deduccion(@PathVariable("resultado") String res, Model modelo){
@@ -28,7 +28,7 @@ public class DeduccionController {
     @PostMapping("/")
     public String deducir(Integer iva, Integer precio, Model modelo){
 
-        double resultado=calculadoraService.deducirIVA(iva, precio);
+        double resultado=deduccionServicio.deducirIva(iva, precio);
         modelo.addAttribute("resultado", resultado);
 
         return "deducir.html";
