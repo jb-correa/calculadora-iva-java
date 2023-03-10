@@ -8,6 +8,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequestMapping("/sumar-iva")
@@ -16,20 +17,19 @@ public class SumaController {
     @Autowired
     public CalculadoraService calculadoraService;
 
-    @GetMapping("/sumar")
-    public String suma(Model modelo){
-        modelo.getAttribute("resultado");
+    @GetMapping("/")
+    public String suma( Model modelo){
+
 
         return "sumar.html";
     }
 
-    @PostMapping("/sumar")
+    @PostMapping("/")
     public String sumar(Integer iva, Integer precio, Model modelo){
 
         double resultado=calculadoraService.sumarIVA(iva, precio);
-        modelo.addAttribute("resultado",resultado);
 
-        return "";
+        return "sumar.html/<double:resultado>";
     }
 
 }

@@ -22,7 +22,7 @@
     </header>
     <section>
     <div class="mb-3" style="text-align: center;">
-    <form th:action="@{/sumar-iva/sumar}" method="POST"  >
+    <form th:action="@{/sumar-iva}" method="POST"  >
         <h4>Sumar IVA</h4>
         <br>
         <p>Ingresa el precio</p>
@@ -33,7 +33,7 @@
         <br>
         <br>
         <button type="button" class="btn btn-info">
-            <a th:href="@{/sumar-iva/sumar}">
+            <a th:href="@{/sumar-iva}">
                 Sumar
             </a>
         </button>
@@ -44,7 +44,7 @@
 
     <section>
         <div class="mb-3" style="text-align: center;">
-            <form th:action="@{/deducir-iva/deducir}" method="POST" >
+            <form th:action="@{/deducir-iva}" method="POST" >
                 <h4>Deducir IVA</h4>
                 <br>
                 <p>Ingresa el precio</p>
@@ -55,7 +55,7 @@
                 <br>
                 <br>
                 <button type="button" class="btn btn-info">
-                    <a th:href="@{/deducir-iva/deducir}">
+                    <a th:href="@{/deducir-iva}">
                         Deducir
                     </a>
                 </button>
