@@ -11,13 +11,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping(path="/deducir-iva/{resultado}")
+@RequestMapping(path="/deducir-iva")
 public class DeduccionController {
 
     @Autowired
     public DeduccionServicio deduccionServicio;
 
-    @GetMapping("/")
+    @GetMapping("/{resultado}")
     public String deduccion(@PathVariable("resultado") String res, Model modelo){
 
         double resultado= Double.parseDouble(res);
