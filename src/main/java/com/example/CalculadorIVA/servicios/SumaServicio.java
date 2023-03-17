@@ -5,6 +5,7 @@ import com.example.CalculadorIVA.repositorios.SumaRepositorio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.Date;
 
 @Service
@@ -13,17 +14,7 @@ public class SumaServicio {
     @Autowired
     public SumaRepositorio sumaRepositorio;
 
-    public Suma sumarIva (double precio, double porcentaje){
-
-        double iva=precio*porcentaje/100;
-
-        double resultado=precio+iva;
-
-        Suma suma=crearSuma(precio, porcentaje, resultado);
-
-        return suma;
-    }
-
+    @Transactional
     public Suma crearSuma(double precio, double porcentaje, double resultado){
 
         Suma suma=new Suma();

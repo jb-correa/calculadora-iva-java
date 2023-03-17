@@ -3,6 +3,7 @@ package com.example.CalculadorIVA.controller;
 import com.example.CalculadorIVA.entidades.Suma;
 import com.example.CalculadorIVA.repositorios.SumaRepositorio;
 import com.example.CalculadorIVA.servicios.SumaServicio;
+import org.apache.catalina.filters.ExpiresFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -33,20 +34,15 @@ public class SumaController {
         double resultado=precio+impuesto;
 
         Suma suma=sumaServicio.crearSuma(precio, iva, resultado);
-        modelo.addAttribute("suma", suma);
-        modelo.addAttribute("id", suma.getId());
+        modelo.addAttribute("resultado", suma.getResultado());
 
-        return "sumado.html";
+        return "sumar.html";
     }
 
-    @GetMapping("/suma")
-    public String sumado(Model modelo){
+    @RequestMapping("/suma")
+    public String sumado( Model modelo){
 
-        String id= (String) modelo.getAttribute("id");
 
-        Suma suma = sumaRepositorio.getById(id);
-
-        System.out.println(suma);
 
         return "sumado.html";
     }
