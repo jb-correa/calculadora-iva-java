@@ -15,7 +15,7 @@ public class LandingController {
 
 
     @GetMapping("/")
-    public String calcular(){
+    public String index(){
 
         return "index.html";
     }

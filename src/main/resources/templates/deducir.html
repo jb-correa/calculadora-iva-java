@@ -23,9 +23,22 @@
 
 <section>
     <div class="mb-3" style="text-align: center;">
-        <h3>Tu precio con el IVA deducido es: </h3>
-        <br>
-        <h5 th:text="${resultado}"></h5>
+        <form th:action="@{/deducir-iva}" method="POST" >
+            <h4>Deducir IVA</h4>
+            <br>
+            <p>Ingresa el precio</p>
+            <input type="double" placeholder="Precio bruto" th:value="${precio}">
+            <br>
+            <p>Ingresa el porcentaje de IVA</p>
+            <input type="double" placeholder="Porcentaje de IVA" th:value="${iva}">
+            <br>
+            <br>
+            <button type="button" class="btn btn-info">
+                <a th:href="@{/deducir-iva}">
+                    Deducir
+                </a>
+            </button>
+        </form>
     </div>
 </section>
 

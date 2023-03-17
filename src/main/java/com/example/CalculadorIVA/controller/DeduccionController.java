@@ -11,25 +11,20 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping(path="/deducir-iva")
+@RequestMapping("/deducir-iva")
 public class DeduccionController {
 
     @Autowired
     public DeduccionServicio deduccionServicio;
 
-    @GetMapping("/{resultado}")
-    public String deduccion(@PathVariable("resultado") String res, Model modelo){
+    @GetMapping("/deducir")
+    public String deduccion( Model modelo){
 
-        double resultado= Double.parseDouble(res);
-        modelo.addAttribute("resultado", resultado);
         return "deducir.html";
     }
 
-    @PostMapping("/")
+    @PostMapping("/deduccion")
     public String deducir(Integer iva, Integer precio, Model modelo){
-
-        double resultado=deduccionServicio.deducirIva(iva, precio);
-        modelo.addAttribute("resultado", resultado);
 
         return "deducir.html";
     }

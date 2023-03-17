@@ -12,7 +12,7 @@
     <link  href="{% static 'static/css/gestion.css' %}" rel="stylesheet">
     <title>Calculadora de IVA</title>
 
-    <head>
+</head>
 
 <body >
     <header style="color: black; text-align: center">
@@ -20,50 +20,25 @@
             Bienvenido a tu calculadora de IVA
         </h2>
     </header>
-    <section>
-    <div class="mb-3" style="text-align: center;">
-    <form th:action="@{/sumar-iva}" method="POST"  >
-        <h4>Sumar IVA</h4>
-        <br>
-        <p>Ingresa el precio</p>
-        <input type="double" placeholder="Precio bruto">
-        <br>
-        <p>Ingresa el porcentaje de IVA</p>
-        <input type="double" placeholder="Porcentaje de IVA">
-        <br>
-        <br>
-        <button type="button" class="btn btn-info">
-            <a th:href="@{/sumar-iva}">
-                Sumar
-            </a>
-        </button>
-    </form>
-    </div>
+    <section style="text-align: center">
+        <h3 >Deducir IVA</h3>
+            <button type="button" class="btn btn-info">
+                <a th:href="@{/deducir-iva/deducir}" href="./deducir.html">
+                    Deducir
+                </a>
+            </button>
+
     </section>
 
+    <section style="text-align: center">
+        <h3 >Sumar IVA</h3>
+            <button type="button" class="btn btn-info">
+                <a th:href="@{/sumar-iva/sumar}" href="./sumar.html">
+                    Sumar
+                </a>
+            </button>
 
-    <section>
-        <div class="mb-3" style="text-align: center;">
-            <form th:action="@{/deducir-iva}" method="POST" >
-                <h4>Deducir IVA</h4>
-                <br>
-                <p>Ingresa el precio</p>
-                <input type="double" placeholder="Precio bruto" th:value="${precio}">
-                <br>
-                <p>Ingresa el porcentaje de IVA</p>
-                <input type="double" placeholder="Porcentaje de IVA" th:value="${iva}">
-                <br>
-                <br>
-                <button type="button" class="btn btn-info">
-                    <a th:href="@{/deducir-iva/{resultado}}">
-                        Deducir
-                    </a>
-                </button>
-            </form>
-        </div>
     </section>
-
-
 
 
 
