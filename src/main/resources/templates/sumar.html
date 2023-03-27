@@ -27,7 +27,7 @@
             <h4>Sumar IVA</h4>
             <br>
             <p>Ingresa el precio</p>
-            <input type="double" placeholder="Precio bruto">
+            <input type="double"  placeholder="Precio bruto">
             <br>
             <p>Ingresa el porcentaje de IVA</p>
             <input type="double" placeholder="Porcentaje de IVA">
@@ -41,16 +41,6 @@
         </form>
     </div>
 </section>
-
-    <div class="mb-3" style="text-align: center;" th:if="${suma.resultado!= null}">
-        <h2>Tu resultado es:</h2>
-        <p>"${resultado}"</p>
-    </div>
-
-
-
-
-
 
 
 <script src="{% static 'sitio_web/vendor/jquery/jquery.min.js' %}"></script>

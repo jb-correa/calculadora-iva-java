@@ -28,13 +28,15 @@ public class SumaController {
     }
 
     @PostMapping("/suma")
-    public String sumar(double precio, double iva, Model modelo){
+    public String sumar( double precio,  double iva, Model modelo){
 
         double impuesto=precio*iva/100;
         double resultado=precio+impuesto;
 
         Suma suma=sumaServicio.crearSuma(precio, iva, resultado);
-        modelo.addAttribute("resultado", suma.getResultado());
+        System.out.println(suma);
+        //String idSuma=suma.getId();
+        //modelo.addAttribute("idSuma", idSuma);
 
         return "sumar.html";
     }
@@ -42,7 +44,10 @@ public class SumaController {
     @RequestMapping("/suma")
     public String sumado( Model modelo){
 
-
+        /*String idSuma= (String) modelo.getAttribute("idSuma");
+        System.out.println(idSuma);
+        Suma suma=sumaRepositorio.getById(idSuma);
+        modelo.addAttribute("resultado", suma.getResultado());*/
 
         return "sumado.html";
     }
