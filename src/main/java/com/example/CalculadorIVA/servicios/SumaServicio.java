@@ -15,7 +15,7 @@ public class SumaServicio {
     public SumaRepositorio sumaRepositorio;
 
     @Transactional
-    public Suma crearSuma(double precio, double porcentaje, double resultado){
+    public void crearSuma(double precio, double porcentaje, double resultado){
 
         Suma suma=new Suma();
         suma.setPrecio(precio);
@@ -23,7 +23,7 @@ public class SumaServicio {
         suma.setResultado(resultado);
         suma.setFecha(new Date());
         sumaRepositorio.save(suma);
-        return suma;
+        System.out.println(suma);
     }
 
 }

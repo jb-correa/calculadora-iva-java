@@ -27,17 +27,13 @@
             <h4>Sumar IVA</h4>
             <br>
             <p>Ingresa el precio</p>
-            <input type="double"  placeholder="Precio bruto">
+            <input type="double"  placeholder="Precio bruto" th:value="${precio}">
             <br>
             <p>Ingresa el porcentaje de IVA</p>
-            <input type="double" placeholder="Porcentaje de IVA">
+            <input type="double" placeholder="Porcentaje de IVA" th:value="${porcentaje}">
             <br>
             <br>
-            <button type="button" class="btn btn-info">
-                <a th:href="@{/sumar-iva/suma}">
-                    Sumar
-                </a>
-            </button>
+            <button type="submit" class="btn btn-primary">Sumar</button>
         </form>
     </div>
 </section>

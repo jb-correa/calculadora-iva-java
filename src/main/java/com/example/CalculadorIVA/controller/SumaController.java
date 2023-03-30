@@ -33,8 +33,7 @@ public class SumaController {
         double impuesto=precio*iva/100;
         double resultado=precio+impuesto;
 
-        Suma suma=sumaServicio.crearSuma(precio, iva, resultado);
-        System.out.println(suma);
+        sumaServicio.crearSuma(precio, iva, resultado);
         //String idSuma=suma.getId();
         //modelo.addAttribute("idSuma", idSuma);
 
