@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3308/calculadora?allowPublicKeyRetrieval=true&useSSL=false&useTimezone=true&serverTimezone=GMT&characterEncoding=UTF-8
+    url: jdbc:mysql://localhost:3306/calculadora?allowPublicKeyRetrieval=true&useSSL=false&useTimezone=true&serverTimezone=GMT&characterEncoding=UTF-8
     username: root
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -10,7 +10,8 @@ spring:
       ddl-auto: update
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+        dialect: MySQL5InnoDBDialect
+        globally_quoted_identifiers: true
   thymeleaf:
     cache: false
 server:
