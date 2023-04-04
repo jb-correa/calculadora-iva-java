@@ -20,43 +20,12 @@
 
 <body>
 
-<nav class="navbar navbar-expand-lg">
-    <div class="container">
-        <a class="navbar-brand" href="./inicio.html" th:href="@{/}"><img th:src="@{img/logo.png}" src="../static/img/logo.png" alt=""></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link" th:href="@{/#equipo}">Sobre nosotros</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link boton boton--registro" href="./index.html#contacto" th:href="@{/#contacto}">Pedir turno</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
 
-<div class="login__bg">
+<div class="login__bg" style="text-align:center">
     <div class="container login__container">
         <div class="row justify-content-md-center login__card px-4 pb-5">
-            <div class="">
-                <form th:action="@{/login/logincheck}" th:method="POST" class="mt-5">
 
-                    <label for="dni">Usuario</label>
-                    <input id="dni" name="dni" th:value="${dni}" type="username"
-                           class="me-3 mt-2 form-control">
-
-                    <label for="clave" class="mt-4">Contraseña</label>
-                    <input id="clave" name="clave" th:value="${clave}" type="password"
-                           class="me-3 mt-2 form-control">
-
-                    <button class="boton boton--login" type="submit">Ingresar</button>
-                </form>
-            </div>
+            <h2></h2>
         </div>
     </div>
 </div>

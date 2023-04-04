@@ -10,7 +10,6 @@ spring:
       ddl-auto: update
     properties:
       hibernate:
-        dialect: MySQL5InnoDBDialect
         globally_quoted_identifiers: true
   thymeleaf:
     cache: false
