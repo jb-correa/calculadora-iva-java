@@ -15,7 +15,7 @@ public class DeduccionControlador {
 
     @GetMapping("")
     public String deduccion(){
-        return "";
+        return "deducir.html";
     }
 
 }

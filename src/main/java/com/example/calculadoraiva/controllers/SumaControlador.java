@@ -15,7 +15,7 @@ public class SumaControlador {
 
     @GetMapping("")
     public String suma(){
-        return "";
+        return "sumar.html";
     }
 
 }
