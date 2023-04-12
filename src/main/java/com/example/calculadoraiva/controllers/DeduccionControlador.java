@@ -4,7 +4,9 @@ import com.example.calculadoraiva.services.DeduccionServicio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequestMapping("/deducir-iva")
@@ -15,6 +17,14 @@ public class DeduccionControlador {
 
     @GetMapping("")
     public String deduccion(){
+        return "deducir.html";
+    }
+
+    @PostMapping("")
+    public String deducir(@RequestParam double precio, @RequestParam double porcentaje){
+
+        deduccionServicio.crearDeduccion(precio, porcentaje);
+
         return "deducir.html";
     }
 
