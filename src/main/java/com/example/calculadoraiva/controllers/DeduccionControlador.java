@@ -23,6 +23,9 @@ public class DeduccionControlador {
     @PostMapping("")
     public String deducir(@RequestParam double precio, @RequestParam double porcentaje){
 
+        System.out.println(precio);
+        System.out.println(porcentaje);
+
         deduccionServicio.crearDeduccion(precio, porcentaje);
 
         return "deducir.html";
