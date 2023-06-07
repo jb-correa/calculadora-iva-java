@@ -24,7 +24,6 @@ public class SumaControlador {
         return "sumar.html";
     }
 
-    @Transactional
     @PostMapping("")
     public String sumar(@RequestParam double precio, @RequestParam double porcentaje, ModelMap modelo){
 

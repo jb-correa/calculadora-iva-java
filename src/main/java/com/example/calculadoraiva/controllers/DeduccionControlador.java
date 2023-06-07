@@ -23,7 +23,6 @@ public class DeduccionControlador {
         return "deducir.html";
     }
 
-    @Transactional
     @PostMapping("")
     public String deducir(@RequestParam double precio, @RequestParam double porcentaje){
 
