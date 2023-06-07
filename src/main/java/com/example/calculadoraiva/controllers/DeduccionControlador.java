@@ -1,6 +1,9 @@
 package com.example.calculadoraiva.controllers;
 
 import com.example.calculadoraiva.services.DeduccionServicio;
+
+import jakarta.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,6 +23,7 @@ public class DeduccionControlador {
         return "deducir.html";
     }
 
+    @Transactional
     @PostMapping("")
     public String deducir(@RequestParam double precio, @RequestParam double porcentaje){
 
