@@ -1,6 +1,9 @@
 package com.example.calculadoraiva.controllers;
 
 import com.example.calculadoraiva.services.SumaServicio;
+
+import jakarta.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -21,6 +24,7 @@ public class SumaControlador {
         return "sumar.html";
     }
 
+    @Transactional
     @PostMapping("")
     public String sumar(@RequestParam double precio, @RequestParam double porcentaje, ModelMap modelo){
 
