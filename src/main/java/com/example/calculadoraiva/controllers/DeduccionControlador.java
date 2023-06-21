@@ -28,6 +28,8 @@ public class DeduccionControlador {
         System.out.println(precio);
         System.out.println(porcentaje);
 
+        
+
         deduccionServicio.crearDeduccion(precio, porcentaje);
 
         return "deducir.html";
