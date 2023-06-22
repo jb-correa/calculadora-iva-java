@@ -22,21 +22,21 @@
 
 <h3 style="text-align: center"> Bienvenido a tu calculadora de IVA</h3>
 
-<section style="text-align: center">
-    <h6>Resultado</h6>
+<li style="text-align: center" th:each="d : ${lista}">
+    <ul>Resultado</ul>
     <br>
     <br>
-    <p>El precio es: </p>
-    <p ></p>
+    <ul>El precio es: </ul>
+    <p th:text="{{d.precio}}"></p>
     <br>
     <br>
-    <p>El porcentaje de IVA es: </p>
-    <p>${d.porcentaje}</p>
+    <ul>El porcentaje de IVA es: </ul>
+    <ul th:text="{{d.porcentaje}}"></ul>
     <br>
     <br>
-    <p>El precio final, con IVA deducido es: </p>
-    <p>${d.resultado}</p>
-</section>
+    <ul>El precio final, con IVA deducido es: </ul>
+    <ul th:text="{{d.resultado}}"></ul>
+</li>
 
 <section style="text-align: center">
 

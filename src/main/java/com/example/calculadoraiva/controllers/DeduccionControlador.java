@@ -42,7 +42,9 @@ public class DeduccionControlador {
         List<Deduccion> lista=deduccionServicio.listarTodos();
 
         Deduccion d=lista.get(lista.size()-1);
-        model.put("d", d);
+        lista.clear();
+        lista.add(d);
+        model.put("lista", lista);
 
         return "deducido.html";
     }
