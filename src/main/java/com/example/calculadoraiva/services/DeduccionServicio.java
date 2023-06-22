@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
+import java.util.List;
 
 @Service
 public class DeduccionServicio {
@@ -24,6 +25,11 @@ public class DeduccionServicio {
         d.setResultado(resultado);
         d.setFecha(new Date());
         deduccionRepositorio.save(d);
+    }
+
+    public List<Deduccion> listarTodos(){
+        List<Deduccion> lista =deduccionRepositorio.findAll();
+        return lista;
     }
 
 }
