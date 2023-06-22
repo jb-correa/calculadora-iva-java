@@ -30,7 +30,7 @@ public class DeduccionControlador {
 
         deduccionServicio.crearDeduccion(precio, porcentaje);
 
-        return "deducir.html";
+        return "deducido.html";
     }
 
 }
