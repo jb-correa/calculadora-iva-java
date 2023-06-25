@@ -22,18 +22,13 @@
 
 <h3 style="text-align: center"> Bienvenido a tu calculadora de IVA</h3>
 
+<!--Encontrar método para mostrar atributos-->
 <li style="text-align: center" th:each="d : ${lista}">
     <ul>Resultado</ul>
-    <br>
-    <br>
     <ul>El precio es: </ul>
     <p th:text="{{d.precio}}"></p>
-    <br>
-    <br>
     <ul>El porcentaje de IVA es: </ul>
     <ul th:text="{{d.porcentaje}}"></ul>
-    <br>
-    <br>
     <ul>El precio final, con IVA deducido es: </ul>
     <ul th:text="{{d.resultado}}"></ul>
 </li>
