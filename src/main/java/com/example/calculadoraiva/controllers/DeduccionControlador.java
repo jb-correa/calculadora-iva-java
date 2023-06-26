@@ -28,20 +28,19 @@ public class DeduccionControlador {
     }
 
     @PostMapping("")
-    public String deducir(@RequestParam double precio, @RequestParam double porcentaje){
+    public String deducir(@RequestParam double precio, @RequestParam double porcentaje, ModelMap model){
 
         System.out.println(precio);
         System.out.println(porcentaje);
 
         Deduccion d=deduccionServicio.crearDeduccion(precio, porcentaje);
 
-        String id=d.getId();
 
-        return "deducido.html/{id}";
+        return "deducido.html";
     }
 
-    @GetMapping("deducido/{id}")
-    public String deducido(ModelMap model, @PathVariable String id){
+    @GetMapping("/deducido/{id}")
+    public String deducido(ModelMap model, @PathVariable("id") String id){
 
         Deduccion d=new Deduccion();
 
