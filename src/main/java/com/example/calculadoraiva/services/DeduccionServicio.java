@@ -29,8 +29,7 @@ public class DeduccionServicio {
     }
 
     public List<Deduccion> listarTodos(){
-        List<Deduccion> lista =deduccionRepositorio.findAll();
-        return lista;
+        return deduccionRepositorio.findAll();
     }
 
 }

@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 
@@ -44,7 +45,7 @@ public class DeduccionControlador {
 
         List<Deduccion> lista=deduccionServicio.listarTodos();
         Deduccion d=lista.get(lista.size()-1);
-        System.out.println(d.toString());
+        System.out.println(d);
         model.put("d", d);
         return "deducido.html";
     }
