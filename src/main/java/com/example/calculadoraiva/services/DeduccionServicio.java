@@ -16,7 +16,7 @@ public class DeduccionServicio {
     private DeduccionRepositorio deduccionRepositorio;
 
     @Transactional
-    public void crearDeduccion(double precio, double porcentaje){
+    public Deduccion crearDeduccion(double precio, double porcentaje){
         double iva=precio*porcentaje/100;
         double resultado=precio-iva;
         Deduccion d=new Deduccion();
@@ -25,6 +25,7 @@ public class DeduccionServicio {
         d.setResultado(resultado);
         d.setFecha(new Date());
         deduccionRepositorio.save(d);
+        return d;
     }
 
     public List<Deduccion> listarTodos(){

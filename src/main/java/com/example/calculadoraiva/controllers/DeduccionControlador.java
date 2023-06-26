@@ -1,18 +1,17 @@
 package com.example.calculadoraiva.controllers;
 
 import com.example.calculadoraiva.entities.Deduccion;
+import com.example.calculadoraiva.repositories.DeduccionRepositorio;
 import com.example.calculadoraiva.services.DeduccionServicio;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 @RequestMapping("/deducir-iva")
@@ -20,6 +19,8 @@ public class DeduccionControlador {
 
     @Autowired
     private DeduccionServicio deduccionServicio;
+    @Autowired
+    private DeduccionRepositorio deduccionRepositorio;
 
     @GetMapping("")
     public String deduccion(){
@@ -32,16 +33,23 @@ public class DeduccionControlador {
         System.out.println(precio);
         System.out.println(porcentaje);
 
-        deduccionServicio.crearDeduccion(precio, porcentaje);
+        Deduccion d=deduccionServicio.crearDeduccion(precio, porcentaje);
 
-        return "deducido.html";
+        String id=d.getId();
+
+        return "deducido.html/{id}";
     }
 
-    @GetMapping("deducido")
-    public String deducido(ModelMap model){
-        List<Deduccion> lista=deduccionServicio.listarTodos();
+    @GetMapping("deducido/{id}")
+    public String deducido(ModelMap model, @PathVariable String id){
 
-        Deduccion d=lista.get(lista.size()-1);
+        Deduccion d=new Deduccion();
+
+        Optional<Deduccion> deduccionOptional=deduccionRepositorio.findById(id);
+        if (deduccionOptional.isPresent()){
+            d=deduccionOptional.get();
+        }
+        System.out.println(d.toString());
         model.put("d", d);
 
         return "deducido.html";
