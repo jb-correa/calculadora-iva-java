@@ -33,24 +33,19 @@ public class DeduccionControlador {
         System.out.println(precio);
         System.out.println(porcentaje);
 
-        Deduccion d=deduccionServicio.crearDeduccion(precio, porcentaje);
+        deduccionServicio.crearDeduccion(precio, porcentaje);
 
 
         return "deducido.html";
     }
 
-    @GetMapping("/deducido/{id}")
-    public String deducido(ModelMap model, @PathVariable("id") String id){
+    @GetMapping("/deducido")
+    public String deducido(ModelMap model){
 
-        Deduccion d=new Deduccion();
-
-        Optional<Deduccion> deduccionOptional=deduccionRepositorio.findById(id);
-        if (deduccionOptional.isPresent()){
-            d=deduccionOptional.get();
-        }
+        List<Deduccion> lista=deduccionServicio.listarTodos();
+        Deduccion d=lista.get(lista.size()-1);
         System.out.println(d.toString());
         model.put("d", d);
-
         return "deducido.html";
     }
 
