@@ -1,5 +1,8 @@
 package com.example.calculadoraiva.controllers;
 
+import com.example.calculadoraiva.entities.Deduccion;
+import com.example.calculadoraiva.entities.Suma;
+import com.example.calculadoraiva.repositories.SumaRepositorio;
 import com.example.calculadoraiva.services.SumaServicio;
 
 
@@ -11,12 +14,17 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.List;
+
 @Controller
 @RequestMapping("/sumar-iva")
 public class SumaControlador {
 
     @Autowired
     private SumaServicio sumaServicio;
+
+    @Autowired
+    private SumaRepositorio sumaRepositorio;
 
     @GetMapping("")
     public String suma(){
@@ -29,6 +37,16 @@ public class SumaControlador {
         sumaServicio.crearSuma(precio, porcentaje);
 
         return "sumar.html";
+    }
+
+    @GetMapping("/sumado")
+    public String deducido(ModelMap model){
+
+        List<Suma> lista=sumaServicio.listarTodos();
+        Suma s=lista.get(lista.size()-1);
+        System.out.println(s);
+        model.put("d", s);
+        return "suma.html";
     }
 
 }

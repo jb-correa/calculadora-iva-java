@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
+import java.util.List;
 
 @Service
 public class SumaServicio {
@@ -25,6 +26,11 @@ public class SumaServicio {
         suma.setFecha(new Date());
         sumaRepositorio.save(suma);
 
+    }
+
+    public List<Suma> listarTodos(){
+
+        return sumaRepositorio.findAll();
     }
 
 
