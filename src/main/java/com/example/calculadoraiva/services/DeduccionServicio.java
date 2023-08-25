@@ -16,14 +16,12 @@ public class DeduccionServicio {
     private DeduccionRepositorio deduccionRepositorio;
 
     @Transactional
-    public void crearDeduccion(double precio, double porcentaje){
-        double iva=precio*porcentaje/100;
-        double resultado=precio-iva;
-        Deduccion d=new Deduccion();
-        d.setPrecio(precio);
-        d.setPorcentaje(porcentaje);
-        d.setResultado(resultado);
+    public void crearDeduccion(Deduccion d){
+
+        double iva=d.getPrecio()*d.getPorcentaje()/100;
+        d.setResultado(d.getPrecio()+iva);
         d.setFecha(new Date());
+
         deduccionRepositorio.save(d);
 
     }
