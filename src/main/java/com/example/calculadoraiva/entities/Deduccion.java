@@ -9,6 +9,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
 
+import io.micrometer.common.lang.NonNull;
+import io.micrometer.common.lang.Nullable;
+
 import java.util.Date;
 
 @Entity
@@ -22,9 +25,9 @@ public class Deduccion {
     @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "uuid2")
     private String id;
-
+    
     private double precio;
-
+    
     private double porcentaje;
 
     private double resultado;
