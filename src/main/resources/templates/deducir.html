@@ -22,15 +22,15 @@
 <h3 style="text-align: center"> Bienvenido a tu calculadora de IVA</h3>
 
 <section style="text-align: center">
-    <form method="post" th:action="@{/deducir-iva}">
+    <form method="post" th:action="@{/deducir-iva}" th:object="${deduccion}">
     <br>
     <br>
         <label  class="form-label">Ingresa el precio</label>
-        <input style="margin-left: 300px; width: 50%" type="double"  class="form-control" placeholder="Precio" name="precio" th:value="${precio}">
+        <input style="margin-left: 300px; width: 50%" type="double"  class="form-control" placeholder="Precio" name="precio" th:field="*{precio}">
         <br>
         <br>
         <label  class="form-label">Ingresa el porcentaje de IVA</label>
-        <input style="margin-left: 300px; width: 50%" type="double"  class="form-control" placeholder="Porcentaje de IVA" name="porcentaje" th:value="${porcentaje}">
+        <input style="margin-left: 300px; width: 50%" type="double"  class="form-control" placeholder="Porcentaje de IVA" name="porcentaje" th:field="*{porcentaje}">
         <br>
         <br>
         <button type="submit"> Deducir </button>
