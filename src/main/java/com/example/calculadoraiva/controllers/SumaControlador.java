@@ -40,13 +40,14 @@ public class SumaControlador {
     }
 
     @GetMapping("/sumado")
-    public String deducido(ModelMap model){
+    public String sumado(ModelMap model){
 
         List<Suma> lista=sumaServicio.listarTodos();
+
         Suma s=lista.get(lista.size()-1);
         System.out.println(s);
-        model.put("d", s);
-        return "suma.html";
+        model.put("s", s);
+        return "sumado.html";
     }
 
 }
