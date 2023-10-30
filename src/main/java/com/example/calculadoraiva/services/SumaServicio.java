@@ -17,13 +17,15 @@ public class SumaServicio {
 
     @Transactional
     public void crearSuma(double precio, double porcentaje){
-        double iva=precio*porcentaje/100;
-        double resultado=precio+iva;
+
         Suma suma=new Suma();
         suma.setPrecio(precio);
         suma.setPorcentaje(porcentaje);
+        double iva=precio*porcentaje/100;
+        double resultado=precio+iva;
         suma.setResultado(resultado);
         suma.setFecha(new Date());
+        System.out.println(suma);
         sumaRepositorio.save(suma);
 
     }
