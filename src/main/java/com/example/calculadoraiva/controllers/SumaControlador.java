@@ -36,7 +36,7 @@ public class SumaControlador {
 
         sumaServicio.crearSuma(precio, porcentaje);
 
-        return "sumar.html";
+        return "sumado.html";
     }
 
     @GetMapping("/sumado")
