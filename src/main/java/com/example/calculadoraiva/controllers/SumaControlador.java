@@ -1,6 +1,5 @@
 package com.example.calculadoraiva.controllers;
 
-import com.example.calculadoraiva.entities.Deduccion;
 import com.example.calculadoraiva.entities.Suma;
 import com.example.calculadoraiva.repositories.SumaRepositorio;
 import com.example.calculadoraiva.services.SumaServicio;
@@ -32,11 +31,11 @@ public class SumaControlador {
     }
 
     @PostMapping("")
-    public String sumar(@RequestParam double precio, @RequestParam double porcentaje, ModelMap modelo){
+    public String sumar(@RequestParam double precio, @RequestParam double porcentaje){
 
         sumaServicio.crearSuma(precio, porcentaje);
 
-        return "sumado.html";
+        return "sumar.html";
     }
 
     @GetMapping("/sumado")

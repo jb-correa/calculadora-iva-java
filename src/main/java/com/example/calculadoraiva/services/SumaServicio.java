@@ -21,11 +21,8 @@ public class SumaServicio {
         Suma suma=new Suma();
         suma.setPrecio(precio);
         suma.setPorcentaje(porcentaje);
-        double iva=precio*porcentaje/100;
-        double resultado=precio+iva;
-        suma.setResultado(resultado);
+        suma.setResultado(precio+(precio*porcentaje/100));
         suma.setFecha(new Date());
-        System.out.println(suma);
         sumaRepositorio.save(suma);
 
     }
