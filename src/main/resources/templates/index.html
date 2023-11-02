@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:martin-top="http://www.w3.org/1999/xhtml"
+      xmlns:text-align="http://www.w3.org/1999/xhtml">
 <head th:insert="fragments :: head">
     
 </head>
@@ -8,7 +9,7 @@
      <header class="masthead text-center text-white">
         <div class="masthead-content">
           <div class="container">
-            <h1 class="masthead-heading mb-0">Bienvenido a tu calculadora de IVA</h1>
+            <h3 class="masthead-heading mb-0">Bienvenido a tu calculadora de IVA</h3>
 
           </div>
         </div>
@@ -16,19 +17,21 @@
       </header>
 
       <section>
-        <div class="container">
+        <div class="container" style="text-align:center; martin-top:30 px">
           <div class="row align-items-center">
-            <h4>Sumar IVA a un precio</h4>
-              <button class="btn btn-success"> <a href="/suma">Sumar</a></button>
+            <h4 style="text-allign: center">Sumar IVA a un precio</h4>
+              <button class="btn btn-success" style="text-allign: center; color: white">
+                  <a href="/suma">Sumar</a></button>
           </div>
         </div>
       </section>
 
      <section>
-         <div class="container">
+         <div class="container" style="text-align:center; margin-top:30 px">
              <div class="row align-items-center">
                  <h4>Deducir IVA de un precio</h4>
-                 <button class="btn btn-success"> <a href="/deduccion">Deducir</a></button>
+                 <button class="btn btn-success" style="text-allign: center; color: white">
+                     <a href="/deduccion">Deducir</a></button>
              </div>
          </div>
      </section>
