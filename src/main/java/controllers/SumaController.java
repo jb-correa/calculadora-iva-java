@@ -16,14 +16,14 @@ public class SumaController {
     @Autowired
     private SumaService sumaService;
 
-    @GetMapping("")
+    @GetMapping("/suma")
     public String suma(){
 
         return "suma.html";
     }
 
     @Transactional
-    @PostMapping("")
+    @PostMapping("/suma")
     public String sumar(@RequestParam double precio, @RequestParam double porcentaje){
 
         sumaService.crearSuma(precio, porcentaje);
