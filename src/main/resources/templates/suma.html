@@ -18,13 +18,13 @@
 
 <section style="text-align:center; margin-top: 50 px">
     <div class="container" >
-        <form th:action="@{/suma}" method="POST">
+        <form action="/suma" method="POST">
         <div class="row align-items-center">
             <h4 style="text-allign: center">Sumar IVA a un precio</h4>
             <label  class="form-label">Precio </label>
-            <input type="number" class="form-control" placeholder="Ingresa el precio" name="precio" th:value="${precio}">
+            <input type="number" class="form-control" placeholder="Ingresa el precio" name="precio" value="precio">
             <label  class="form-label">Porcentaje </label>
-            <input type="number" class="form-control" placeholder="Ingresa el porcentaje de IVA" name="porcentaje" th:value="${porcentaje}">
+            <input type="number" class="form-control" placeholder="Ingresa el porcentaje de IVA" name="porcentaje" value="porcentaje">
 
             <button class="btn btn-success" style="text-allign: center;">
                 <a href="/suma" style="color: white">Sumar</a></button>
