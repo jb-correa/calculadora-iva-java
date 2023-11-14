@@ -15,7 +15,7 @@ public class sumaController {
     @Autowired
     public SumaService sumaService;
 
-    @GetMapping("")
+    @GetMapping("/suma")
     public String suma (){
 
         return "suma.html";
