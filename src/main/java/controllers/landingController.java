@@ -15,4 +15,10 @@ public class landingController {
         return "index.html";
     }
 
+    @GetMapping("/suma")
+    public String suma(){
+
+        return "suma.html";
+    }
+
 }

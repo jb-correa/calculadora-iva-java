@@ -1,83 +1,24 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head >
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <link rel="icon" type="image/x-icon" href="/images/Logo01.png">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
-            crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Allison&family=Bebas+Neue&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Allison&display=swap" rel="stylesheet">
-    <link
-            href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-            rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="/style/style.css">
-    <title>Calculadora de IVA</title>
+</head>
+<body>
 
-    <head>
-
-<body id="page-top">
-<!-- Navigation-->
-<header class="masthead">
-    <nav class="navbar navbar-dark ">
-        <div class="container-fluid">
+<header class="masthead text-center text-white">
+    <div class="masthead-content">
+        <div class="container" style="text-align: center; margin: auto;">
+            <h3 class="masthead-heading mb-0">Bienvenido a tu calculadora de IVA</h3>
         </div>
-    </nav>
+    </div>
 </header>
 
-<main>
+<div class="container" style="text-align: center; margin: auto;">
+    <h4>Suma tu IVA a tu precio</h4>
+    <button class="btn btn-success">
+        <a th:href="@{/suma}">Sumar</a>
+    </button>
+</div>
 
-
-    <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
-        <div class="col-md-5 p-lg-5 mx-auto my-5">
-            <form th:action="@{/suma}" method="post">
-                <input class="controls" type="number" name="precio" id="precio" th:value="${precio}" placeholder="Ingresa tu precio">
-                <input class="controls" type="number" name="porcentaje" id="porcentaje" th:value="${porcentaje}" placeholder="Ingresa tu porcentaje de IVA">
-            </form>
-        </div>
-    </div>
-
-</main>
-<footer class="Footer">
-    <div class="text-center p-1" style="background-color: rgb(0, 0, 0);">
-        <section class="mb-6">
-            <a class="btn btn-outline-info btn-floating m-1" href="#!" role="button"><i
-                    class="bi bi-facebook"></i></a>
-            <a class="btn btn-outline-info btn-floating m-1" href="#!" role="button"><i
-                    class="bi bi-twitter"></i></a>
-            <a class="btn btn-outline-info btn-floating m-1" href="#!" role="button"><i
-                    class="bi bi-google"></i></a>
-            <a class="btn btn-outline-info btn-floating m-1" href="#!" role="button"><i
-                    class="bi bi-instagram"></i></a>
-        </section>
-    </div>
-    <!-- Barra de contacto -->
-    <div class="text-center p-1 text-info" style="background-color: rgb(0, 0, 0);">
-        &copy; Calculadora de IVA 2023 Evergreen Terrace 742 - Old Springfield.
-    </div>
-</footer>
-<!-- BootStrap -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
-        crossorigin="anonymous"></script>
-<!-- Bootstrap core JS-->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
-<!-- Core theme JS-->
-<script src="js/scripts.js"></script>
-<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
-        crossorigin="anonymous"></script>
 </body>
-
 </html>
