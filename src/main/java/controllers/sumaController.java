@@ -1,19 +1,17 @@
 package controllers;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/")
-public class landingController {
+@RequestMapping("/suma")
+public class sumaController {
 
+    @GetMapping("")
+    public String suma (){
 
-    @GetMapping("/")
-    public String index (ModelMap model){
-        model.isEmpty();
-        return "index.html";
+        return "suma.html";
     }
 
 }
