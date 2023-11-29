@@ -12,7 +12,7 @@ public class landingController {
 
     @GetMapping("/")
     public String index (ModelMap model){
-        model.isEmpty();
+
         return "index.html";
     }
 
